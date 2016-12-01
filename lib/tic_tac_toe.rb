@@ -1,5 +1,3 @@
-require 'player'
-
 class TicTacToe
 
   def initialize
@@ -12,8 +10,8 @@ class TicTacToe
     @board
   end
 
-  def winner_combos
-    [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ]
+  def simple_winner_combos
+    [0, 1, 2, 3, 4, 5, 6, 7, 8]
   end
 
   def player_1
@@ -23,6 +21,24 @@ class TicTacToe
   def player_2
     @player2
   end
+
+  def mark_placement1(choice)
+    @player1 << choice
+  end
+
+  def mark_placement2(choice)
+    @player2 << choice
+  end
+
+  def winner_check
+    if @player1 = [1, 2, 3] || [4, 5, 6] || [7, 8, 9]
+      return "Player 1 wins"
+    end
+    if @player2 = [1, 2, 3] || [4, 5, 6] || [7, 8, 9]
+      return "Player 2 wins"
+    end
+  end
+
 
 
 
